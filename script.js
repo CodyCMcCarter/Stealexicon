@@ -10,6 +10,17 @@ for(var i = 0; i < navButtons.length; i++){
     });
 }
 
+var phoneMenu = document.querySelector(".phone-menu");
+var sideBar = document.querySelector(".sidebar");
+
+phoneMenu.addEventListener("mousedown", function(e) {
+    if(e.button === 0 && sideBar.classList.contains("show")){
+        sideBar.classList.remove("show");
+    } else {
+        sideBar.classList.add("show");
+    }
+});
+
 //Handle the collapsing
 function HandleExpand(button) {
     if (button.ariaExpanded === "true"){
