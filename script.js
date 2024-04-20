@@ -1,19 +1,10 @@
-//Grab the collapse buttons
-var navButtons = document.getElementsByClassName("collapsible-button");
+$(".collapsible-button").on("click", function() {
+    HandleExpand(this);
+});
 
-//Add event listener to each button
-for(var i = 0; i < navButtons.length; i++){
-    navButtons[i].addEventListener("mousedown", function(e) {
-        if(e.button === 0){
-            HandleExpand(this);
-        }
-    });
-}
-
-var phoneMenu = document.querySelector(".phone-menu");
 var sideBar = document.querySelector(".sidebar");
 
-phoneMenu.addEventListener("mousedown", function(e) {
+$(".phone-menu").on("click", function(e) {
     if(e.button === 0 && sideBar.classList.contains("show")){
         sideBar.classList.remove("show");
     } else {
